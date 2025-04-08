@@ -1,7 +1,7 @@
 class AppImages {
-  static String islamiLogo = 'assets/images/images/tabs_images/islami_logo.svg';
+  static String islamiLogo = 'assets/images/images/tabs_images/islami_logo.png';
   static String homeTabBackground =
-      'assets/images/images/tabs_images/home_tab_background.svg';
+      'assets/images/images/tabs_images/home_tab_background.png';
 }
 
 class AppIcons {

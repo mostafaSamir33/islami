@@ -29,8 +29,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: tabs[selectedIndex],
+      body: SafeArea(
+        child: Stack(
+          children: [
+            tabs[selectedIndex],
+            Align(alignment: Alignment(0, -1),
+                child: Image.asset(AppImages.islamiLogo,width: width*0.697,))
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) {
           selectedIndex = index;
