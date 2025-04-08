@@ -13,6 +13,17 @@ class AppTheme {
         titleTextStyle: TextStyle(
             color: AppColors.gold, fontSize: 20, fontWeight: FontWeight.w700),
         iconTheme: IconThemeData(color: AppColors.gold, size: 25)),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: AppColors.gold,
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      selectedIconTheme: IconThemeData(color: AppColors.white),
+      selectedItemColor: AppColors.white,
+      unselectedItemColor: AppColors.black,
+      selectedLabelStyle: TextStyle(
+          color: AppColors.white, fontSize: 12, fontWeight: FontWeight.w700),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -26,5 +37,16 @@ class AppTheme {
         titleTextStyle: TextStyle(
             color: AppColors.gold, fontSize: 20, fontWeight: FontWeight.w700),
         iconTheme: IconThemeData(color: AppColors.gold, size: 25)),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: AppColors.gold,
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      //selectedIconTheme: IconThemeData(color: AppColors.white),
+      selectedItemColor: AppColors.white,
+      unselectedItemColor: AppColors.black,
+      selectedLabelStyle: TextStyle(
+          color: AppColors.white, fontSize: 12, fontWeight: FontWeight.w700),
+    ),
   );
 }
