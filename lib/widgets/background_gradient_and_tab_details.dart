@@ -39,7 +39,7 @@ class BackgroundGradientAndTabDetails extends StatelessWidget {
             SizedBox(
               height: distanceBetweenIslamiLogoAndTabDetails,
             ),
-            child
+            Expanded(child: child)
           ],
         ),
       ],

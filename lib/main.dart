@@ -15,6 +15,6 @@ void main() {
       IntroScreen.routeName: (_) => IntroScreen(),
       HomeScreen.routeName: (_) => HomeScreen(),
     },
-    initialRoute: SplashScreen.routeName,
+    initialRoute: HomeScreen.routeName,
   ));
 }

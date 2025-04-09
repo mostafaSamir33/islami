@@ -1,8 +1,14 @@
 class AppImages {
   //app images
   static String islamiLogo = 'assets/images/images/tabs_images/islami_logo.png';
+
+  //quran tab images
   static String homeTabBackground =
-      'assets/images/images/tabs_images/home_tab_background.png';
+      'assets/images/images/tabs_images/quran_tab_images/home_tab_background.png';
+  static String suraCardImage =
+      'assets/images/images/tabs_images/quran_tab_images/sura_card_image.png';
+  static String suraVerse =
+      'assets/images/images/tabs_images/quran_tab_images/sura_verse.svg';
 
   //splash screen 2 images
   static String splashScreen2Background =

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/common/app_assets.dart';
 import 'package:islami/common/app_colors.dart';
-import 'package:islami/tabs/hadith_tab.dart';
-import 'package:islami/tabs/quran_tab.dart';
-import 'package:islami/tabs/radio_tab.dart';
-import 'package:islami/tabs/sebha_tab.dart';
-import 'package:islami/tabs/time_tab.dart';
+
+import '../tabs_of_home_screen/hadith_tab.dart';
+import '../tabs_of_home_screen/quran_tab.dart';
+import '../tabs_of_home_screen/radio_tab.dart';
+import '../tabs_of_home_screen/sebha_tab.dart';
+import '../tabs_of_home_screen/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static final String routeName = '/home screen';
@@ -36,8 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Stack(
           children: [
             tabs[selectedIndex],
-            Align(alignment: Alignment(0, -1),
-                child: Image.asset(AppImages.islamiLogo,width: width*0.697,))
+            Align(
+                alignment: Alignment(0, -1),
+                child: Image.asset(
+                  AppImages.islamiLogo,
+                  width: width * 0.697,
+                ))
           ],
         ),
       ),
@@ -58,7 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(66))),
                 child: SvgPicture.asset(
                   AppIcons.quranIcon,
-                  color: AppColors.white,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                 ),
               )),
           BottomNavigationBarItem(
@@ -71,7 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(66))),
                 child: SvgPicture.asset(
                   AppIcons.hadithIcon,
-                  color: AppColors.white,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                 ),
               )),
           BottomNavigationBarItem(
@@ -84,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(66))),
                 child: SvgPicture.asset(
                   AppIcons.sebhaIcon,
-                  color: AppColors.white,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                 ),
               )),
           BottomNavigationBarItem(
@@ -97,7 +105,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(66))),
                 child: SvgPicture.asset(
                   AppIcons.radioIcon,
-                  color: AppColors.white,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                 ),
               )),
           BottomNavigationBarItem(
@@ -110,7 +119,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(66))),
                 child: SvgPicture.asset(
                   AppIcons.timeIcon,
-                  color: AppColors.white,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.white, BlendMode.srcIn),
                 ),
               )),
         ],
