@@ -66,6 +66,7 @@ flutter:
      - assets/images/images/native_splash_screen_images/
      - assets/images/images/splash_screen_images/
      - assets/images/images/tabs_images/
+     - assets/images/images/tabs_images/quran_tab_images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
