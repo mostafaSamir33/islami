@@ -9,6 +9,12 @@ class AppImages {
       'assets/images/images/tabs_images/quran_tab_images/sura_card_image.png';
   static String suraVerse =
       'assets/images/images/tabs_images/quran_tab_images/sura_verse.svg';
+  static String suraDetailsHeader1 =
+      'assets/images/images/tabs_images/quran_tab_images/sura_details_header_1.png';
+  static String suraDetailsHeader2 =
+      'assets/images/images/tabs_images/quran_tab_images/sura_details_header_2.png';
+  static String suraDetailsFooter =
+      'assets/images/images/tabs_images/quran_tab_images/sura_details_footer.png';
 
   //splash screen 2 images
   static String splashScreen2Background =

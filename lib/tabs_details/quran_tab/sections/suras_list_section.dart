@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/tabs_details/quran_tab/widgets/sura_model.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/sura_tile.dart';
 
 import '../../../common/app_colors.dart';
@@ -25,13 +26,9 @@ class SurasListSection extends StatelessWidget {
           ListView.separated(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 5,
-            itemBuilder: (context, index) => SuraTile(
-              suraNameEnglish: 'Al-Fatiha',
-              suraNameArabic: 'الفاتحه',
-              suraVerses: 7,
-              suraArrangement: '${index + 1}',
-            ),
+            itemCount: SuraModel.suras.length,
+            itemBuilder: (context, index) =>
+                SuraTile(suraModel: SuraModel.suras[index]),
             separatorBuilder: (BuildContext context, int index) => Divider(
               endIndent: 50,
               indent: 40,

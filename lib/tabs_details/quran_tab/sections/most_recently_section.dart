@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/sura_card.dart';
+import 'package:islami/tabs_details/quran_tab/widgets/sura_model.dart';
 
 import '../../../common/app_colors.dart';
 
@@ -26,12 +27,9 @@ class MostRecentlySection extends StatelessWidget {
           height: height * 0.17,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
-            itemBuilder: (context, index) => SuraCard(
-              suraNameEnglish: 'Al-Anbiya',
-              suraNameArabic: 'الأنبياء',
-              suraVerses: 112,
-            ),
+            itemCount: SuraModel.suras.length,
+            itemBuilder: (context, index) =>
+                SuraCard(suraModel: SuraModel.suras[index]),
             separatorBuilder: (BuildContext context, int index) => SizedBox(
               width: 10,
             ),

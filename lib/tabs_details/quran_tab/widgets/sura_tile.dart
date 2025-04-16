@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:islami/tabs_details/quran_tab/sura_details_screen.dart';
+import 'package:islami/tabs_details/quran_tab/widgets/sura_model.dart';
 
 import '../../../common/app_assets.dart';
 import '../../../common/app_colors.dart';
 
 class SuraTile extends StatelessWidget {
-  final String suraNameEnglish;
-  final String suraNameArabic;
-  final int suraVerses;
-  final String suraArrangement;
+  final SuraModel suraModel;
 
-  const SuraTile(
-      {super.key,
-      required this.suraNameEnglish,
-      required this.suraNameArabic,
-      required this.suraVerses,
-      required this.suraArrangement});
+  const SuraTile({super.key, required this.suraModel});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 20),
       child: ListTile(
+        onTap: () =>
+            Navigator.of(context).pushNamed(
+                SuraDetailsScreen.routeName, arguments:suraModel),
         contentPadding: EdgeInsets.zero,
         leading: SizedBox(
           height: 50,
@@ -31,7 +28,7 @@ class SuraTile extends StatelessWidget {
               SvgPicture.asset(AppImages.suraVerse),
               Center(
                 child: Text(
-                  suraArrangement,
+                  suraModel.suraArrangement ?? '',
                   style: TextStyle(
                       color: AppColors.white,
                       fontSize: 16,
@@ -44,7 +41,7 @@ class SuraTile extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.only(bottom: 5),
           child: Text(
-            suraNameEnglish,
+            suraModel.suraNameEnglish,
             style: TextStyle(
                 color: AppColors.white,
                 fontSize: 20,
@@ -52,14 +49,14 @@ class SuraTile extends StatelessWidget {
           ),
         ),
         subtitle: Text(
-          '$suraVerses Verses',
+          '${suraModel.suraVerses} Verses',
           style: TextStyle(
               color: AppColors.white,
               fontSize: 14,
               fontWeight: FontWeight.w700),
         ),
         trailing: Text(
-          suraNameArabic,
+          suraModel.suraNameArabic,
           style: TextStyle(
               color: AppColors.white,
               fontSize: 20,
