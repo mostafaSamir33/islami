@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.4
   flutter_svg: ^2.0.17
+#  path_provider: ^2.1.5
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,9 @@ flutter:
      - assets/images/images/splash_screen_images/
      - assets/images/images/tabs_images/
      - assets/images/images/tabs_images/quran_tab_images/
+     - assets/files/hadiths/Hadeeth/
+     - assets/files/suras/Suras/
+     - assets/files/suras_list/suras list(english name and arabic name and numbers of verses)/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:islami/tabs_details/quran_tab/widgets/sura_model.dart';
 
 import '../../../common/app_assets.dart';
 import '../../../common/app_colors.dart';
 
 class SuraCard extends StatelessWidget {
-  final String suraNameEnglish;
-  final String suraNameArabic;
-  final int suraVerses;
+  final SuraModel suraModel;
 
-  const SuraCard(
-      {super.key,
-      required this.suraNameEnglish,
-      required this.suraNameArabic,
-      required this.suraVerses});
+  const SuraCard({super.key, required this.suraModel});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +39,7 @@ class SuraCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 6),
                   child: Text(
-                    suraNameEnglish,
+                    suraModel.suraNameEnglish,
                     style: TextStyle(
                         color: AppColors.black,
                         fontSize: 24,
@@ -54,7 +49,7 @@ class SuraCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
-                    suraNameArabic,
+                    suraModel.suraNameArabic,
                     style: TextStyle(
                         color: AppColors.black,
                         fontSize: 24,
@@ -62,7 +57,7 @@ class SuraCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '$suraVerses Verses',
+                  '${suraModel.suraVerses} Verses',
                   style: TextStyle(
                       color: AppColors.black,
                       fontSize: 14,

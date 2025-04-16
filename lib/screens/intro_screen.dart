@@ -15,3 +15,20 @@ class _IntroScreenState extends State<IntroScreen> {
     return Scaffold();
   }
 }
+
+// Future<String> loadAsset() async {
+//   return await rootBundle.loadString('assets/files/1.txt');
+// }
+//
+//
+// Future<String?> _read() async {
+//   String? text;
+//   try {
+//     final Directory directory = await getApplicationDocumentsDirectory();
+//     final File file = File('${directory.path}/assets/files/1.txt');
+//     text = await file.readAsString();
+//   } catch (e) {
+//     print("Couldn't read file");
+//   }
+//   return text;
+// }

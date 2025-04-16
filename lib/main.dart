@@ -3,6 +3,7 @@ import 'package:islami/common/app_theme.dart';
 import 'package:islami/screens/home_screen.dart';
 import 'package:islami/screens/intro_screen.dart';
 import 'package:islami/screens/splash_screen.dart';
+import 'package:islami/tabs_details/quran_tab/sura_details_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,6 +15,7 @@ void main() {
       SplashScreen.routeName: (_) => SplashScreen(),
       IntroScreen.routeName: (_) => IntroScreen(),
       HomeScreen.routeName: (_) => HomeScreen(),
+      SuraDetailsScreen.routeName: (_) => SuraDetailsScreen(),
     },
     initialRoute: HomeScreen.routeName,
   ));
