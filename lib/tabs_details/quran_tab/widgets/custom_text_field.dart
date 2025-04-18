@@ -5,13 +5,23 @@ import '../../../common/app_colors.dart';
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final Widget image;
+  final TextEditingController? controller;
+  final void Function(String)? onChanged;
+  final Widget? suffix;
 
   const CustomTextField(
-      {super.key, required this.hintText, required this.image});
+      {super.key,
+      required this.hintText,
+      required this.image,
+      this.controller,
+      this.onChanged,
+      this.suffix});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: onChanged,
+      controller: controller,
       cursorColor: AppColors.gold,
       style: TextStyle(
           color: AppColors.offWhite, fontSize: 16, fontWeight: FontWeight.w700),
@@ -20,9 +30,10 @@ class CustomTextField extends StatelessWidget {
         fillColor: AppColors.black.withOpacity(0.7),
         hintText: hintText,
         hintStyle: TextStyle(
-            color: AppColors.offWhite,
+            color: AppColors.offWhite.withOpacity(0.6),
             fontSize: 16,
             fontWeight: FontWeight.w700),
+        suffix: suffix,
         prefixIcon: Padding(padding: const EdgeInsets.all(10), child: image),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(10)),

@@ -33,6 +33,18 @@ class AppImages {
       'assets/images/images/splash_screen_images/splash_screen_2_shape_1.png';
   static String splashScreen2Shape2 =
       'assets/images/images/splash_screen_images/splash_screen_2_shape_2.png';
+
+  //intro screen images
+  static String page_1_image =
+      'assets/images/images/intro_screen_images/page_1_image.png';
+  static String page_2_image =
+      'assets/images/images/intro_screen_images/page_2_image.png';
+  static String page_3_image =
+      'assets/images/images/intro_screen_images/page_3_image.png';
+  static String page_4_image =
+      'assets/images/images/intro_screen_images/page_4_image.png';
+  static String page_5_image =
+      'assets/images/images/intro_screen_images/page_5_image.png';
 }
 
 class AppIcons {
