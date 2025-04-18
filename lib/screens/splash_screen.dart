@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:islami/common/app_assets.dart';
+import 'package:islami/screens/home_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'intro_screen.dart';
 
@@ -18,10 +20,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    introScreenOrHomeScreen();
+  }
+
+  void introScreenOrHomeScreen() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bool onboardingSeen = prefs.getBool('onboardingSeen') ?? false;
+
     Timer(
         Duration(seconds: 3),
-        () =>
-            Navigator.of(context).pushReplacementNamed(IntroScreen.routeName));
+        () => Navigator.of(context).pushReplacementNamed(
+            onboardingSeen ? HomeScreen.routeName : IntroScreen.routeName));
   }
 
   @override

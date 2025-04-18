@@ -7,8 +7,15 @@ import 'package:islami/tabs_details/quran_tab/sections/suras_list_section.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/custom_text_field.dart';
 import 'package:islami/widgets/background_gradient_and_tab_details.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
+
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +32,19 @@ class QuranTab extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: CustomTextField(
+                    onChanged: (p0) => setState(() {}),
+                    controller: controller,
+                    suffix: InkWell(
+                      onTap: () {
+                        controller.clear();
+                        FocusScope.of(context).unfocus();
+                        setState(() {});
+                      },
+                      child: Icon(
+                        Icons.close,
+                        color: AppColors.grey,
+                      ),
+                    ),
                     hintText: 'Sura Name',
                     image: SvgPicture.asset(
                       AppIcons.quranIcon,
@@ -33,13 +53,21 @@ class QuranTab extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Expanded(
-                  child: ListView(
-                    children: [
-                      MostRecentlySection(),
-                      SurasListSection(),
-                    ],
+                  child: SingleChildScrollView(
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        MostRecentlySection(),
+                        SurasListSection(
+                          search: controller.text.trim(),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],

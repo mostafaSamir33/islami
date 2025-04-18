@@ -5,10 +5,22 @@ import 'package:islami/tabs_details/quran_tab/widgets/sura_tile.dart';
 import '../../../common/app_colors.dart';
 
 class SurasListSection extends StatelessWidget {
-  const SurasListSection({super.key});
+  final String? search;
+
+  const SurasListSection({super.key, required this.search});
 
   @override
   Widget build(BuildContext context) {
+    List<SuraModel> filterSuras = SuraModel.suras
+        .where(
+          (element) =>
+              element.suraNameArabic.contains(search ?? '') ||
+              element.suraNameEnglish
+                  .toLowerCase()
+                  .contains((search ?? '')
+                  .toLowerCase()),
+        )
+        .toList();
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,9 +38,9 @@ class SurasListSection extends StatelessWidget {
           ListView.separated(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: SuraModel.suras.length,
+            itemCount: filterSuras.length,
             itemBuilder: (context, index) =>
-                SuraTile(suraModel: SuraModel.suras[index]),
+                SuraTile(suraModel: filterSuras[index]),
             separatorBuilder: (BuildContext context, int index) => Divider(
               endIndent: 50,
               indent: 40,

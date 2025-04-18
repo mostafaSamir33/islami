@@ -17,6 +17,6 @@ void main() {
       HomeScreen.routeName: (_) => HomeScreen(),
       SuraDetailsScreen.routeName: (_) => SuraDetailsScreen(),
     },
-    initialRoute: HomeScreen.routeName,
+    initialRoute: SplashScreen.routeName,
   ));
 }
