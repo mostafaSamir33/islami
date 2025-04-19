@@ -6,12 +6,14 @@ class BackgroundGradientAndTabDetails extends StatelessWidget {
   final String backgroundImage;
   final Widget child;
   final double distanceBetweenIslamiLogoAndTabDetails;
+  final bool isVisible;
 
   const BackgroundGradientAndTabDetails(
       {super.key,
       required this.backgroundImage,
       required this.child,
-      required this.distanceBetweenIslamiLogoAndTabDetails});
+      required this.distanceBetweenIslamiLogoAndTabDetails,
+      required this.isVisible});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +27,16 @@ class BackgroundGradientAndTabDetails extends StatelessWidget {
           width: width,
           fit: BoxFit.cover,
         ),
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [AppColors.black.withOpacity(0.7), AppColors.black],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.5, 1]),
+        Visibility(
+          visible: isVisible,
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [AppColors.black.withOpacity(0.7), AppColors.black],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0.5, 1]),
+            ),
           ),
         ),
         Column(
