@@ -16,6 +16,16 @@ class AppImages {
   static String suraDetailsFooter =
       'assets/images/images/tabs_images/quran_tab_images/sura_details_footer.png';
 
+  //sebha tab images
+  static String sebhaBackgroundImage =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_background_image.png';
+  static String sebhaTextImage =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_text_image.png';
+  static String sebhaBodyShape =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_body_shape.png';
+  static String sebhaHeadShape =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_head_shape.png';
+
   //splash screen 2 images
   static String splashScreen2Background =
       'assets/images/images/splash_screen_images/splash_screen_2_background.png';
