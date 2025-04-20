@@ -21,12 +21,16 @@ class _SebhaTabState extends State<SebhaTab> {
   ];
   int indexOfSebhaTexts = 0;
 
+  double turns = 0;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return BackgroundGradientAndTabDetails(
       backgroundImage: AppImages.sebhaBackgroundImage,
+      distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
+      isVisible: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -51,7 +55,10 @@ class _SebhaTabState extends State<SebhaTab> {
                   },
                   child: Stack(
                     children: [
-                      Image.asset(AppImages.sebhaBodyShape),
+                      AnimatedRotation(
+                          turns: turns,
+                          duration: Duration(seconds: 1),
+                          child: Image.asset(AppImages.sebhaBodyShape)),
                       Positioned(
                         right: 0,
                         left: 0,
@@ -88,13 +95,12 @@ class _SebhaTabState extends State<SebhaTab> {
           ),
         ],
       ),
-      distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
-      isVisible: false,
     );
   }
 
   sebhaLogic() {
     sebhaCounter++;
+    turns += 0.0335;
     if (sebhaCounter > 33) {
       if (indexOfSebhaTexts < sebhaTexts.length - 1) {
         indexOfSebhaTexts++;
