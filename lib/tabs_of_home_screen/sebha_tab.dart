@@ -95,13 +95,13 @@ class _SebhaTabState extends State<SebhaTab> {
 
   sebhaLogic() {
     sebhaCounter++;
-    if(sebhaCounter>33){
-      if(indexOfSebhaTexts<sebhaTexts.length-1){
+    if (sebhaCounter > 33) {
+      if (indexOfSebhaTexts < sebhaTexts.length - 1) {
         indexOfSebhaTexts++;
-      }else{
-        indexOfSebhaTexts=0;
+      } else {
+        indexOfSebhaTexts = 0;
       }
-      sebhaCounter=0;
+      sebhaCounter = 0;
     }
     setState(() {});
   }
