@@ -101,7 +101,6 @@ class _SebhaTabState extends State<SebhaTab> {
   sebhaLogic() {
     sebhaCounter++;
     turns += 0.0335;
-
     if (sebhaCounter > 33) {
       if (indexOfSebhaTexts < sebhaTexts.length - 1) {
         indexOfSebhaTexts++;
