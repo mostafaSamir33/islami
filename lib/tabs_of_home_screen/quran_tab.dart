@@ -72,29 +72,28 @@ class _QuranTabState extends State<QuranTab> {
                         ColorFilter.mode(AppColors.gold, BlendMode.srcIn),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      children: [
-                        MostRecentlySection(
-                          suras: mostRecentList,
-                          onSuraClicked: addToMostRecent,
-                        ),
-                        SurasListSection(
-                          search: controller.text.trim(),
-                          onSuraClicked: addToMostRecent,
-                        ),
-                      ],
-                    ),
-
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      MostRecentlySection(
+                        suras: mostRecentList,
+                        onSuraClicked: addToMostRecent,
+                      ),
+                      SurasListSection(
+                        search: controller.text.trim(),
+                        onSuraClicked: addToMostRecent,
+                      ),
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
