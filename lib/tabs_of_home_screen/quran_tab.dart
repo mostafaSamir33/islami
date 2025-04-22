@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/common/app_assets.dart';
 import 'package:islami/common/app_colors.dart';
+import 'package:islami/common/consts.dart';
 import 'package:islami/tabs_details/quran_tab/sections/most_recently_section.dart';
 import 'package:islami/tabs_details/quran_tab/sections/suras_list_section.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/custom_text_field.dart';
 import 'package:islami/widgets/background_gradient_and_tab_details.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
@@ -16,6 +18,24 @@ class QuranTab extends StatefulWidget {
 
 class _QuranTabState extends State<QuranTab> {
   TextEditingController controller = TextEditingController();
+  List<int> mostRecentList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  Future<void> getData() async {
+    SharedPreferences prf = await SharedPreferences.getInstance();
+    List<String>? data = prf.getStringList(AppConsts.mostRecentKey);
+    mostRecentList = (data ?? [])
+        .map(
+          (e) => int.parse(e),
+        )
+        .toList();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,21 +72,26 @@ class _QuranTabState extends State<QuranTab> {
                         ColorFilter.mode(AppColors.gold, BlendMode.srcIn),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    children: [
-                      MostRecentlySection(),
-                      SurasListSection(
-                        search: controller.text.trim(),
-                      ),
-                    ],
+                SizedBox(
+                  height: 20,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        MostRecentlySection(
+                          suras: mostRecentList,
+                          onSuraClicked: addToMostRecent,
+                        ),
+                        SurasListSection(
+                          search: controller.text.trim(),
+                          onSuraClicked: addToMostRecent,
+                        ),
+                      ],
+                    ),
+
                   ),
                 ),
               )
@@ -77,5 +102,23 @@ class _QuranTabState extends State<QuranTab> {
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
       isVisible: true,
     );
+  }
+
+  void addToMostRecent(int id) {
+    mostRecentList.insert(0, id);
+    Set<int> temp = mostRecentList.toSet();
+    mostRecentList = temp.toList();
+    SharedPreferences.getInstance().then(
+      (value) {
+        value.setStringList(
+            AppConsts.mostRecentKey,
+            mostRecentList
+                .map(
+                  (e) => e.toString(),
+                )
+                .toList());
+      },
+    );
+    setState(() {});
   }
 }

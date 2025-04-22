@@ -2,7 +2,7 @@ class SuraModel {
   String suraNameEnglish;
   String suraNameArabic;
   String suraVerses;
-  String? suraArrangement;
+  int? suraArrangement;
 
   SuraModel({
     required this.suraNameEnglish,
@@ -20,7 +20,7 @@ class SuraModel {
           suraNameEnglish: englishQuranSurahs[i],
           suraNameArabic: arabicAuranSuras[i],
           suraVerses: ayaNumber[i],
-          suraArrangement: '${i + 1}');
+          suraArrangement: i + 1);
       suras.add(sura);
     }
     return suras;
