@@ -16,6 +16,32 @@ class AppImages {
   static String suraDetailsFooter =
       'assets/images/images/tabs_images/quran_tab_images/sura_details_footer.png';
 
+  //sebha tab images
+  static String sebhaBackgroundImage =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_background_image.png';
+  static String sebhaTextImage =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_text_image.png';
+  static String sebhaBodyShape =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_body_shape.png';
+  static String sebhaHeadShape =
+      'assets/images/images/tabs_images/sebha_tab_images/sebha_head_shape.png';
+
+  //radio tab images
+  static String radioBackgroundImage =
+      'assets/images/images/tabs_images/radio_tab_images/radio_background_image.png';
+  static String radioMosque =
+      'assets/images/images/tabs_images/radio_tab_images/radio_mosque.png';
+  static String radioSoundWave =
+      'assets/images/images/tabs_images/radio_tab_images/radio_sound_wave.svg';
+  static String radioCardSoundOn =
+      'assets/images/images/tabs_images/radio_tab_images/radio_card_sound_on.png';
+  static String radioCardSoundOff =
+      'assets/images/images/tabs_images/radio_tab_images/radio_card_sound_off.png';
+  static String radioSoundWave2 =
+      'assets/images/images/tabs_images/radio_tab_images/radio_sound_wave_2.png';
+  static String radioSoundWave3 =
+      'assets/images/images/tabs_images/radio_tab_images/radio_sound_wave_3.png';
+
   //splash screen 2 images
   static String splashScreen2Background =
       'assets/images/images/splash_screen_images/splash_screen_2_background.png';
