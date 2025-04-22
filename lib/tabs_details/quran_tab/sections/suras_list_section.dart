@@ -6,8 +6,10 @@ import '../../../common/app_colors.dart';
 
 class SurasListSection extends StatelessWidget {
   final String? search;
+  final OnClick onSuraClicked;
 
-  const SurasListSection({super.key, required this.search});
+  const SurasListSection(
+      {super.key, required this.search, required this.onSuraClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,7 @@ class SurasListSection extends StatelessWidget {
               element.suraNameArabic.contains(search ?? '') ||
               element.suraNameEnglish
                   .toLowerCase()
-                  .contains((search ?? '')
-                  .toLowerCase()),
+                  .contains((search ?? '').toLowerCase()),
         )
         .toList();
     return Expanded(
@@ -39,8 +40,10 @@ class SurasListSection extends StatelessWidget {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemCount: filterSuras.length,
-            itemBuilder: (context, index) =>
-                SuraTile(suraModel: filterSuras[index]),
+            itemBuilder: (context, index) => SuraTile(
+              suraModel: filterSuras[index],
+              onSuraClicked: onSuraClicked,
+            ),
             separatorBuilder: (BuildContext context, int index) => Divider(
               endIndent: 50,
               indent: 40,

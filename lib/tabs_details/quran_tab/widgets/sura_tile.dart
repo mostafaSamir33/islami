@@ -6,19 +6,25 @@ import 'package:islami/tabs_details/quran_tab/widgets/sura_model.dart';
 import '../../../common/app_assets.dart';
 import '../../../common/app_colors.dart';
 
+typedef OnClick = void Function(int);
+
 class SuraTile extends StatelessWidget {
   final SuraModel suraModel;
+  final OnClick onSuraClicked;
 
-  const SuraTile({super.key, required this.suraModel});
+  const SuraTile(
+      {super.key, required this.suraModel, required this.onSuraClicked});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 20),
       child: ListTile(
-        onTap: () =>
-            Navigator.of(context).pushNamed(
-                SuraDetailsScreen.routeName, arguments:suraModel),
+        onTap: () {
+          onSuraClicked(suraModel.suraArrangement!);
+          Navigator.of(context)
+              .pushNamed(SuraDetailsScreen.routeName, arguments: suraModel);
+        },
         contentPadding: EdgeInsets.zero,
         leading: SizedBox(
           height: 50,
@@ -28,7 +34,7 @@ class SuraTile extends StatelessWidget {
               SvgPicture.asset(AppImages.suraVerse),
               Center(
                 child: Text(
-                  suraModel.suraArrangement ?? '',
+                  '${suraModel.suraArrangement}',
                   style: TextStyle(
                       color: AppColors.white,
                       fontSize: 16,
