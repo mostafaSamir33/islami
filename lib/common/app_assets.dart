@@ -42,6 +42,14 @@ class AppImages {
   static String radioSoundWave3 =
       'assets/images/images/tabs_images/radio_tab_images/radio_sound_wave_3.png';
 
+  //hadith tab images
+  static String hadithTabBackground =
+      'assets/images/images/tabs_images/hadith_tab_images/hadith_tab_background.png';
+  static String hadithCardBackground =
+      'assets/images/images/tabs_images/hadith_tab_images/hadith_card_background_image.png';
+  static String hadithCardFooter =
+      'assets/images/images/tabs_images/hadith_tab_images/hadith_card_footer_image.png';
+
   //splash screen 2 images
   static String splashScreen2Background =
       'assets/images/images/splash_screen_images/splash_screen_2_background.png';

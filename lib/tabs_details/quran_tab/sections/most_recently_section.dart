@@ -16,7 +16,7 @@ class MostRecentlySection extends StatelessWidget {
   Widget build(BuildContext context) {
     List<SuraModel> temp = suras
         .map(
-          (e) => SuraModel.suras[e - 1],
+          (e) => SuraModel.suras[e -1],
         )
         .toList();
     double height = MediaQuery.of(context).size.height;

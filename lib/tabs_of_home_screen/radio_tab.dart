@@ -24,7 +24,7 @@ class _RadioTabState extends State<RadioTab> with TickerProviderStateMixin {
     return BackgroundGradientAndTabDetails(
       backgroundImage: AppImages.radioBackgroundImage,
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 16,
-      isVisible: false,
+      gradiantIsVisible: false,
       child: Align(
         alignment: Alignment(0, -1),
         child: Column(
