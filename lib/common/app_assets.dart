@@ -50,6 +50,22 @@ class AppImages {
   static String hadithCardFooter =
       'assets/images/images/tabs_images/hadith_tab_images/hadith_card_footer_image.png';
 
+  //time tab images
+  static String timeTabBackground =
+      'assets/images/images/tabs_images/time_tab_images/time_tab_background.png';
+  static String timeTabEveningAzkar =
+      'assets/images/images/tabs_images/time_tab_images/time_tab_evening_azkar.png';
+  static String timeTabMorningAzkar =
+      'assets/images/images/tabs_images/time_tab_images/time_tab_morning_azkar.png';
+  static String timeTabShape1 =
+      'assets/images/images/tabs_images/time_tab_images/time_tab_shape_1.png';
+  static String timeTabShape2 =
+      'assets/images/images/tabs_images/time_tab_images/time_tab_shape_2.png';
+  static String timeTabShape3 =
+      'assets/images/images/tabs_images/time_tab_images/time_tab_shape_3.png';
+  static String timeTabSoundIcon =
+      'assets/images/images/tabs_images/time_tab_images/tab_time_sound_icon.png';
+
   //splash screen 2 images
   static String splashScreen2Background =
       'assets/images/images/splash_screen_images/splash_screen_2_background.png';
