@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/common/app_assets.dart';
 import 'package:islami/common/app_colors.dart';
 import 'package:islami/common/consts.dart';
+import 'package:islami/tabs_details/hadith_tab/widgets/hadith_model.dart';
 import 'package:islami/tabs_details/quran_tab/sections/most_recently_section.dart';
 import 'package:islami/tabs_details/quran_tab/sections/suras_list_section.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/custom_text_field.dart';
@@ -99,7 +100,6 @@ class _QuranTabState extends State<QuranTab> {
         ),
       ),
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
-      isVisible: true,
     );
   }
 

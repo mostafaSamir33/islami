@@ -79,6 +79,7 @@ flutter:
      - assets/images/images/intro_screen_images/
      - assets/images/images/tabs_images/sebha_tab_images/
      - assets/images/images/tabs_images/radio_tab_images/
+     - assets/images/images/tabs_images/hadith_tab_images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

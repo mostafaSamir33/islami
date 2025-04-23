@@ -30,7 +30,7 @@ class _SebhaTabState extends State<SebhaTab> {
     return BackgroundGradientAndTabDetails(
       backgroundImage: AppImages.sebhaBackgroundImage,
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
-      isVisible: false,
+      gradiantIsVisible: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
