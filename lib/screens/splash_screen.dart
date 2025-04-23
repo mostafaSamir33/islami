@@ -1,6 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:islami/common/app_assets.dart';
+import 'package:islami/screens/home_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'intro_screen.dart';
 
@@ -17,19 +20,94 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    introScreenOrHomeScreen();
+  }
+
+  void introScreenOrHomeScreen() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bool onboardingSeen = prefs.getBool('onboardingSeen') ?? false;
+
     Timer(
         Duration(seconds: 3),
-        () =>
-            Navigator.of(context).pushReplacementNamed(IntroScreen.routeName));
+        () => Navigator.of(context).pushReplacementNamed(
+            onboardingSeen ? HomeScreen.routeName : IntroScreen.routeName));
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Color(0xff202020),
-      body: Image(
-        image: AssetImage('assets/images/splash screen 2.png'),
-        width: MediaQuery.of(context).size.width,
-        fit: BoxFit.cover,
+    double width = MediaQuery.of(context).size.width;
+    return Scaffold(
+      body: Stack(
+        children: [
+          Image(
+            image: AssetImage(AppImages.splashScreen2Background),
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          SafeArea(
+            child: Align(
+              alignment: Alignment(0, -1),
+              child: Image(
+                image: AssetImage(AppImages.splashScreen2MosqueShape),
+                width: width * 0.67,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment(1, -1),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: Image(
+                image: AssetImage(AppImages.splashScreen2Glow),
+                width: width * 0.2,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 174),
+            child: Image(
+              image: AssetImage(AppImages.splashScreen2Shape1),
+              width: width * 0.2,
+            ),
+          ),
+          Center(
+            child: Image(
+              image: AssetImage(AppImages.splashScreen2Logo),
+              width: width * 0.4,
+            ),
+          ),
+          Align(
+            alignment: Alignment(1, 1),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 100),
+              child: Image(
+                image: AssetImage(AppImages.splashScreen2Shape2),
+                width: width * 0.23,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0, 1),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 60),
+              child: Image(
+                image: AssetImage(AppImages.splashScreen2Branding1),
+                width: width * 0.41,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment(0, 1),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 36),
+              child: Image(
+                image: AssetImage(AppImages.splashScreen2Branding2),
+                width: width * 0.56,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
