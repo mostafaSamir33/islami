@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islami/common/app_colors.dart';
 import 'package:islami/intro_screen_pages/page_1.dart';
 import 'package:islami/intro_screen_pages/page_2.dart';
@@ -24,6 +25,13 @@ class _IntroScreenState extends State<IntroScreen> {
   int currentIndex = 0;
   List<Widget> introScreenPages = [Page1(), Page2(), Page3(), Page4(), Page5()];
 
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: AppColors.black,
+    ));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

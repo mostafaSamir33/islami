@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islami/common/app_assets.dart';
+import 'package:islami/common/app_colors.dart';
 import 'package:islami/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,6 +22,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: AppColors.black,
+      statusBarColor: AppColors.gold,
+      systemNavigationBarIconBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
+    ));
     introScreenOrHomeScreen();
   }
 
