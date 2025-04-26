@@ -22,36 +22,27 @@ class SurasListSection extends StatelessWidget {
                   .contains((search ?? '').toLowerCase()),
         )
         .toList();
-    return Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Text(
-              'Suras List',
-              style: TextStyle(
-                  color: AppColors.offWhite,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-          ListView.separated(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: filterSuras.length,
-            itemBuilder: (context, index) => SuraTile(
-              suraModel: filterSuras[index],
-              onSuraClicked: onSuraClicked,
-            ),
-            separatorBuilder: (BuildContext context, int index) => Divider(
-              endIndent: 50,
-              indent: 40,
-              thickness: 1,
-              color: AppColors.white,
-            ),
-          )
-        ],
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        childCount: filterSuras.length,
+        (context, index) {
+          return Column(
+            children: [
+              SuraTile(
+                suraModel: filterSuras[index],
+                onSuraClicked: onSuraClicked,
+              ),
+              index == filterSuras.length - 1
+                  ? SizedBox.shrink()
+                  : Divider(
+                      endIndent: 50,
+                      indent: 40,
+                      thickness: 1,
+                      color: AppColors.white,
+                    ),
+            ],
+          );
+        },
       ),
     );
   }

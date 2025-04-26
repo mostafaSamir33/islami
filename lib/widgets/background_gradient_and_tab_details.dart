@@ -24,12 +24,14 @@ class BackgroundGradientAndTabDetails extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Image.asset(
-          backgroundImage,
-          height: height,
-          width: width,
-          fit:fit?? BoxFit.cover,
-          alignment: alignment??Alignment.center,
+        SingleChildScrollView(
+          child: Image.asset(
+            backgroundImage,
+            height: height,
+            width: width,
+            fit:fit?? BoxFit.cover,
+            alignment: alignment??Alignment.center,
+          ),
         ),
         Visibility(
           visible: gradiantIsVisible ?? true,

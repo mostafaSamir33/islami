@@ -31,69 +31,71 @@ class _SebhaTabState extends State<SebhaTab> {
       backgroundImage: AppImages.sebhaBackgroundImage,
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
       gradiantIsVisible: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 56),
-            child: Image.asset(
-              AppImages.sebhaTextImage,
-            ),
-          ),
-          Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 16, left: 142, right: 142),
-                child: Image.asset(AppImages.sebhaHeadShape),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 56),
+              child: Image.asset(
+                AppImages.sebhaTextImage,
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 74, bottom: 92, right: 26, left: 26),
-                child: GestureDetector(
-                  onTap: () {
-                    sebhaLogic();
-                  },
-                  child: Stack(
-                    children: [
-                      AnimatedRotation(
-                          turns: turns,
-                          duration: Duration(seconds: 1),
-                          child: Image.asset(AppImages.sebhaBodyShape)),
-                      Positioned(
-                        right: 0,
-                        left: 0,
-                        top: 0,
-                        bottom: 0,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(sebhaTexts[indexOfSebhaTexts],
-                                style: GoogleFonts.justAnotherHand(
+            ),
+            Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 16, left: 142, right: 142),
+                  child: Image.asset(AppImages.sebhaHeadShape),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 74, bottom: 92, right: 26, left: 26),
+                  child: GestureDetector(
+                    onTap: () {
+                      sebhaLogic();
+                    },
+                    child: Stack(
+                      children: [
+                        AnimatedRotation(
+                            turns: turns,
+                            duration: Duration(seconds: 1),
+                            child: Image.asset(AppImages.sebhaBodyShape)),
+                        Positioned(
+                          right: 0,
+                          left: 0,
+                          top: 0,
+                          bottom: 0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(sebhaTexts[indexOfSebhaTexts],
+                                  style: GoogleFonts.justAnotherHand(
+                                      color: AppColors.white,
+                                      fontSize: 36,
+                                      fontWeight: FontWeight.w700) //TextStyle(
+                                  ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                sebhaCounter.toString(),
+                                style: TextStyle(
                                     color: AppColors.white,
                                     fontSize: 36,
-                                    fontWeight: FontWeight.w700) //TextStyle(
-                                ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              sebhaCounter.toString(),
-                              style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: 36,
-                                  fontWeight: FontWeight.w700),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                                    fontWeight: FontWeight.w700),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ],
-          ),
-        ],
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

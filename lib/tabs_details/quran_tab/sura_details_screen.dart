@@ -32,107 +32,114 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       loadSuraContent();
       loadContent = false;
     }
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(suraModel.suraNameEnglish),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image(
-                        image: AssetImage(AppImages.suraDetailsHeader1),
-                        height: height * 0.098,
-                        width: width * 0.21,
-                      ),
-                      Text(
-                        suraModel.suraNameArabic,
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: AppColors.gold,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      Image(
-                        image: AssetImage(AppImages.suraDetailsHeader2),
-                        height: height * 0.098,
-                        width: width * 0.21,
-                      )
-                    ],
-                  ),
-                  success
-                      ? Expanded(
-                          child: SingleChildScrollView(
-                            child: RichText(
-                              textDirection: TextDirection.rtl,
-                              text: TextSpan(
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge!
-                                    .copyWith(
-                                      color: AppColors.gold,
-                                    ),
-                                children: List.generate(
-                                  suraContent.length,
-                                  (index) => TextSpan(
-                                      text: suraContent[index] +
-                                          '(${index + 1}) '),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+            overlays: [SystemUiOverlay.top]);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(suraModel.suraNameEnglish),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image(
+                          image: AssetImage(AppImages.suraDetailsHeader1),
+                          height: height * 0.098,
+                          width: width * 0.21,
+                        ),
+                        Text(
+                          suraModel.suraNameArabic,
+                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: AppColors.gold,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        Image(
+                          image: AssetImage(AppImages.suraDetailsHeader2),
+                          height: height * 0.098,
+                          width: width * 0.21,
+                        )
+                      ],
+                    ),
+                    success
+                        ? Expanded(
+                            child: SingleChildScrollView(
+                              child: RichText(
+                                textDirection: TextDirection.rtl,
+                                text: TextSpan(
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge!
+                                      .copyWith(
+                                        color: AppColors.gold,
+                                      ),
+                                  children: List.generate(
+                                    suraContent.length,
+                                    (index) => TextSpan(
+                                        text: suraContent[index] +
+                                            '(${index + 1}) '),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        )
-                      : loading
-                          ? Expanded(
-                              child: Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            )
-                          : Expanded(
-                              child: Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      errorText ?? '',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleLarge!
-                                          .copyWith(
-                                            color: AppColors.gold,
-                                          ),
-                                    ),
-                                    ElevatedButton(
-                                      onPressed: () => loadSuraContent(),
-                                      style: ButtonStyle(
-                                          backgroundColor:
-                                              WidgetStatePropertyAll(
-                                                  AppColors.gold)),
-                                      child: Text(
-                                        'Try Again',
-                                        style:
-                                            TextStyle(color: AppColors.black),
-                                      ),
-                                    )
-                                  ],
+                          )
+                        : loading
+                            ? Expanded(
+                                child: Center(
+                                  child: CircularProgressIndicator(),
                                 ),
-                              ),
-                            )
-                ],
+                              )
+                            : Expanded(
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        errorText ?? '',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleLarge!
+                                            .copyWith(
+                                              color: AppColors.gold,
+                                            ),
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () => loadSuraContent(),
+                                        style: ButtonStyle(
+                                            backgroundColor:
+                                                WidgetStatePropertyAll(
+                                                    AppColors.gold)),
+                                        child: Text(
+                                          'Try Again',
+                                          style:
+                                              TextStyle(color: AppColors.black),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                  ],
+                ),
               ),
             ),
-          ),
-          Image(
-            image: AssetImage(AppImages.suraDetailsFooter),
-            width: width,
-          )
-        ],
+            Image(
+              image: AssetImage(AppImages.suraDetailsFooter),
+              width: width,
+            )
+          ],
+        ),
       ),
     );
   }

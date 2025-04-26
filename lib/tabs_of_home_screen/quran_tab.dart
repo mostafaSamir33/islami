@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/common/app_assets.dart';
 import 'package:islami/common/app_colors.dart';
 import 'package:islami/common/consts.dart';
-import 'package:islami/tabs_details/hadith_tab/widgets/hadith_model.dart';
 import 'package:islami/tabs_details/quran_tab/sections/most_recently_section.dart';
 import 'package:islami/tabs_details/quran_tab/sections/suras_list_section.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/custom_text_field.dart';
@@ -78,21 +77,35 @@ class _QuranTabState extends State<QuranTab> {
                 height: 20,
               ),
               Expanded(
-                child: SingleChildScrollView(
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    children: [
-                      MostRecentlySection(
-                        suras: mostRecentList,
-                        onSuraClicked: addToMostRecent,
+                child: CustomScrollView(
+                  slivers: [
+                    SliverList(
+                      delegate: SliverChildListDelegate(
+                        [
+                          MostRecentlySection(
+                            suras: mostRecentList,
+                            onSuraClicked: addToMostRecent,
+                          ),
+                        ],
                       ),
-                      SurasListSection(
-                        search: controller.text.trim(),
-                        onSuraClicked: addToMostRecent,
+                    ),
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Text(
+                          'Suras List',
+                          style: TextStyle(
+                              color: AppColors.offWhite,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                    SurasListSection(
+                      search: controller.text.trim(),
+                      onSuraClicked: addToMostRecent,
+                    ),
+                  ],
                 ),
               ),
             ],
