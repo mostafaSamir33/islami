@@ -45,71 +45,69 @@ class _QuranTabState extends State<QuranTab> {
       backgroundImage: AppImages.homeTabBackground,
       child: Padding(
         padding: const EdgeInsets.only(left: 20),
-        child: Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: CustomTextField(
-                  onChanged: (p0) => setState(() {}),
-                  controller: controller,
-                  suffix: InkWell(
-                    onTap: () {
-                      controller.clear();
-                      FocusScope.of(context).unfocus();
-                      setState(() {});
-                    },
-                    child: Icon(
-                      Icons.close,
-                      color: AppColors.grey,
-                    ),
-                  ),
-                  hintText: 'Sura Name',
-                  image: SvgPicture.asset(
-                    AppIcons.quranIcon,
-                    colorFilter:
-                        ColorFilter.mode(AppColors.gold, BlendMode.srcIn),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: CustomTextField(
+                onChanged: (p0) => setState(() {}),
+                controller: controller,
+                suffix: InkWell(
+                  onTap: () {
+                    controller.clear();
+                    FocusScope.of(context).unfocus();
+                    setState(() {});
+                  },
+                  child: Icon(
+                    Icons.close,
+                    color: AppColors.grey,
                   ),
                 ),
+                hintText: 'Sura Name',
+                image: SvgPicture.asset(
+                  AppIcons.quranIcon,
+                  colorFilter:
+                      ColorFilter.mode(AppColors.gold, BlendMode.srcIn),
+                ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                child: CustomScrollView(
-                  slivers: [
-                    SliverList(
-                      delegate: SliverChildListDelegate(
-                        [
-                          MostRecentlySection(
-                            suras: mostRecentList,
-                            onSuraClicked: addToMostRecent,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Text(
-                          'Suras List',
-                          style: TextStyle(
-                              color: AppColors.offWhite,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: CustomScrollView(
+                slivers: [
+                  SliverList(
+                    delegate: SliverChildListDelegate(
+                      [
+                        MostRecentlySection(
+                          suras: mostRecentList,
+                          onSuraClicked: addToMostRecent,
                         ),
+                      ],
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        'Suras List',
+                        style: TextStyle(
+                            color: AppColors.offWhite,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700),
                       ),
                     ),
-                    SurasListSection(
-                      search: controller.text.trim(),
-                      onSuraClicked: addToMostRecent,
-                    ),
-                  ],
-                ),
+                  ),
+                  SurasListSection(
+                    search: controller.text.trim(),
+                    onSuraClicked: addToMostRecent,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
