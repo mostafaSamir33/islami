@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/common/app_colors.dart';
 import 'package:islami/common/app_theme.dart';
 import 'package:islami/screens/home_screen.dart';
 import 'package:islami/screens/intro_screen.dart';

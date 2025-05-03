@@ -39,7 +39,7 @@ class MostRecentlySection extends StatelessWidget {
                 height: height * 0.17,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: SuraModel.suras.length,
+                  itemCount: temp.length,
                   itemBuilder: (context, index) => SuraCard(
                       key: UniqueKey(),
                       onSuraClicked: onSuraClicked,
