@@ -36,15 +36,15 @@ class CustomTextField extends StatelessWidget {
         suffix: suffix,
         prefixIcon: Padding(padding: const EdgeInsets.all(10), child: image),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide(color: AppColors.gold, width: 1),
         ),
         disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide(color: AppColors.gold, width: 1),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
           borderSide: BorderSide(color: AppColors.gold, width: 1),
         ),
       ),

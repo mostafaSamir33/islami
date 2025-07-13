@@ -43,6 +43,7 @@ class _QuranTabState extends State<QuranTab> {
     double width = MediaQuery.of(context).size.width;
     return BackgroundGradientAndTabDetails(
       backgroundImage: AppImages.homeTabBackground,
+      distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
       child: Padding(
         padding: const EdgeInsets.only(left: 20),
         child: Column(
@@ -72,7 +73,7 @@ class _QuranTabState extends State<QuranTab> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -110,7 +111,6 @@ class _QuranTabState extends State<QuranTab> {
           ],
         ),
       ),
-      distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 20,
     );
   }
 

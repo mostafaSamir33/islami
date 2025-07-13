@@ -21,7 +21,7 @@ class MostRecentlySection extends StatelessWidget {
         .toList();
     double height = MediaQuery.of(context).size.height;
     return suras.isEmpty
-        ? SizedBox.shrink()
+        ? const SizedBox.shrink()
         : Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -45,7 +45,7 @@ class MostRecentlySection extends StatelessWidget {
                       onSuraClicked: onSuraClicked,
                       suraModel: temp[index]),
                   separatorBuilder: (BuildContext context, int index) =>
-                      SizedBox(
+                      const SizedBox(
                     width: 10,
                   ),
                 ),

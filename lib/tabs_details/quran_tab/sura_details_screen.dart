@@ -5,7 +5,7 @@ import 'package:islami/common/app_colors.dart';
 import 'package:islami/tabs_details/quran_tab/widgets/sura_model.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
-  static final String routeName = '/sura details screen';
+  static const String routeName = '/sura details screen';
 
   const SuraDetailsScreen({super.key});
 
@@ -87,15 +87,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                   children: List.generate(
                                     suraContent.length,
                                     (index) => TextSpan(
-                                        text: suraContent[index] +
-                                            '(${index + 1}) '),
+                                        text: '${suraContent[index]}(${index + 1}) '),
                                   ),
                                 ),
                               ),
                             ),
                           )
                         : loading
-                            ? Expanded(
+                            ? const Expanded(
                                 child: Center(
                                   child: CircularProgressIndicator(),
                                 ),
@@ -148,7 +147,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     loading = true;
     setState(() {});
     try {
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 3));
       String fileContent = await rootBundle.loadString(
           'assets/files/suras/Suras/${suraModel.suraArrangement}.txt');
       suraContent = fileContent.trim().split('\n');

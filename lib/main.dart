@@ -7,7 +7,7 @@ import 'package:islami/screens/splash_screen.dart';
 import 'package:islami/tabs_details/quran_tab/sura_details_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
       routes: {
-        SplashScreen.routeName: (_) => SplashScreen(),
-        IntroScreen.routeName: (_) => IntroScreen(),
-        HomeScreen.routeName: (_) => HomeScreen(),
-        SuraDetailsScreen.routeName: (_) => SuraDetailsScreen(),
+        SplashScreen.routeName: (_) => const SplashScreen(),
+        IntroScreen.routeName: (_) => const IntroScreen(),
+        HomeScreen.routeName: (_) => const HomeScreen(),
+        SuraDetailsScreen.routeName: (_) => const SuraDetailsScreen(),
       },
       initialRoute: SplashScreen.routeName,
     );

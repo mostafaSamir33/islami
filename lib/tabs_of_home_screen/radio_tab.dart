@@ -15,7 +15,7 @@ class RadioTab extends StatefulWidget {
 
 class _RadioTabState extends State<RadioTab> with TickerProviderStateMixin {
   late TabController tabController = TabController(
-      length: 2, vsync: this, animationDuration: Duration(seconds: 2));
+      length: 2, vsync: this, animationDuration: const Duration(seconds: 2));
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +26,12 @@ class _RadioTabState extends State<RadioTab> with TickerProviderStateMixin {
       distanceBetweenIslamiLogoAndTabDetails: height * 0.162 + 16,
       gradiantIsVisible: false,
       child: Align(
-        alignment: Alignment(0, -1),
+        alignment: const Alignment(0, -1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Stack(
-              alignment: Alignment(0, 0),
+              alignment: const Alignment(0, 0),
               children: [
                 Container(
                   height: height * 0.05,
@@ -42,7 +42,7 @@ class _RadioTabState extends State<RadioTab> with TickerProviderStateMixin {
                   ),
                 ),
                 ButtonsTabBar(
-                  tabs: [
+                  tabs: const [
                     Tab(text: 'Radio'),
                     Tab(text: 'Reciters'),
                   ],
@@ -63,14 +63,14 @@ class _RadioTabState extends State<RadioTab> with TickerProviderStateMixin {
                     color: AppColors.gold,
                   ),
                   unselectedDecoration:
-                      BoxDecoration(color: Colors.transparent),
+                      const BoxDecoration(color: Colors.transparent),
                 )
               ],
             ),
             Expanded(
               child: TabBarView(
                 controller: tabController,
-                children: [RadioButtonTab(), RecitersButtonTab()],
+                children: const [RadioButtonTab(), RecitersButtonTab()],
               ),
             )
           ],

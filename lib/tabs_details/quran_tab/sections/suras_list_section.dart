@@ -33,7 +33,7 @@ class SurasListSection extends StatelessWidget {
                 onSuraClicked: onSuraClicked,
               ),
               index == filterSuras.length - 1
-                  ? SizedBox.shrink()
+                  ? const SizedBox.shrink()
                   : Divider(
                       endIndent: 50,
                       indent: 40,

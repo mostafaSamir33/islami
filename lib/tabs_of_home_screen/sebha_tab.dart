@@ -58,7 +58,7 @@ class _SebhaTabState extends State<SebhaTab> {
                       children: [
                         AnimatedRotation(
                             turns: turns,
-                            duration: Duration(seconds: 1),
+                            duration: const Duration(seconds: 1),
                             child: Image.asset(AppImages.sebhaBodyShape)),
                         Positioned(
                           right: 0,
@@ -75,7 +75,7 @@ class _SebhaTabState extends State<SebhaTab> {
                                       fontSize: 36,
                                       fontWeight: FontWeight.w700) //TextStyle(
                                   ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               Text(

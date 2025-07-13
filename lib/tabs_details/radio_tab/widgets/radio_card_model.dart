@@ -2,43 +2,43 @@ import 'package:islami/tabs_details/radio_tab/widgets/radio_card.dart';
 
 class RadioCardModel extends RadioCard {
   const RadioCardModel(
-      {required super.radioCardText,
+      {super.key, required super.radioCardText,
       super.mosqueImageIsVisible,
       super.soundWaveImageIsVisible});
 
   static List<RadioCardModel> radioButtonTabCardsObjects = [
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Radio Ibrahim Al-Akdar',
       mosqueImageIsVisible: true,
     ),
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Radio Al-Qaria Yassen',
       soundWaveImageIsVisible: true,
     ),
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Radio Ahmed Al-trabulsi',
       mosqueImageIsVisible: true,
     ),
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Radio Addokali Mohammad Alalim',
       mosqueImageIsVisible: true,
     )
   ];
 
   static List<RadioCardModel> recitersButtonTabCardsObjects = [
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Ibrahim Al-Akdar',
       mosqueImageIsVisible: true,
     ),
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Akram Alalaqmi',
       soundWaveImageIsVisible: true,
     ),
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Majed Al-Enezi',
       mosqueImageIsVisible: true,
     ),
-    RadioCardModel(
+    const RadioCardModel(
       radioCardText: 'Malik shaibat Alhamed',
       mosqueImageIsVisible: true,
     )

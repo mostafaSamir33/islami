@@ -12,7 +12,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../intro_screen_pages/page_5.dart';
 
 class IntroScreen extends StatefulWidget {
-  static final String routeName = '/intro screen';
+  static const String routeName = '/intro screen';
 
   const IntroScreen({super.key});
 
@@ -23,7 +23,7 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   final PageController pageController = PageController();
   int currentIndex = 0;
-  List<Widget> introScreenPages = [Page1(), Page2(), Page3(), Page4(), Page5()];
+  List<Widget> introScreenPages = [const Page1(), const Page2(), const Page3(), const Page4(), const Page5()];
 
   @override
   void initState() {
@@ -49,14 +49,14 @@ class _IntroScreenState extends State<IntroScreen> {
             },
           ),
           currentIndex == 0
-              ? SizedBox.shrink()
+              ? const SizedBox.shrink()
               : Positioned(
                   bottom: 16,
                   left: 16,
                   child: TextButton(
                     onPressed: () {
                       pageController.previousPage(
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           curve: Curves.easeInOut);
                     },
                     child: Text(
@@ -80,7 +80,7 @@ class _IntroScreenState extends State<IntroScreen> {
                       .pushReplacementNamed(HomeScreen.routeName);
                 } else {
                   pageController.nextPage(
-                      duration: Duration(seconds: 1), curve: Curves.easeInOut);
+                      duration: const Duration(seconds: 1), curve: Curves.easeInOut);
                 }
               },
               child: Text(

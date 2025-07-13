@@ -41,7 +41,7 @@ class BackgroundGradientAndTabDetails extends StatelessWidget {
                   colors: [AppColors.black.withOpacity(0.7), AppColors.black],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.5, 1]),
+                  stops: const [0.5, 1]),
             ),
           ),
         ),

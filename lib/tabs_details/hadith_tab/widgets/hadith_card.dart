@@ -25,7 +25,7 @@ class HadithCard extends StatelessWidget {
               AppImages.hadithCardBackground,
               height: height * 0.8,
               width: width * 0.6,
-              alignment: Alignment(0, 0),
+              alignment: const Alignment(0, 0),
             ),
             Positioned(
               top: 42,

@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'intro_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  static final String routeName = '/splash screen';
+  static const String routeName = '/splash screen';
 
   const SplashScreen({super.key});
 
@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
     final bool onboardingSeen = prefs.getBool('onboardingSeen') ?? false;
 
     Timer(
-        Duration(seconds: 3),
+        const Duration(seconds: 3),
         () => Navigator.of(context).pushReplacementNamed(
             onboardingSeen ? HomeScreen.routeName : IntroScreen.routeName));
   }
@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           SafeArea(
             child: Align(
-              alignment: Alignment(0, -1),
+              alignment: const Alignment(0, -1),
               child: Image(
                 image: AssetImage(AppImages.splashScreen2MosqueShape),
                 width: width * 0.67,
@@ -65,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Align(
-            alignment: Alignment(1, -1),
+            alignment: const Alignment(1, -1),
             child: Padding(
               padding: const EdgeInsets.only(right: 12),
               child: Image(
@@ -88,7 +88,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Align(
-            alignment: Alignment(1, 1),
+            alignment: const Alignment(1, 1),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 100),
               child: Image(
@@ -98,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Align(
-            alignment: Alignment(0, 1),
+            alignment: const Alignment(0, 1),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 60),
               child: Image(
@@ -108,7 +108,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Align(
-            alignment: Alignment(0, 1),
+            alignment: const Alignment(0, 1),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 36),
               child: Image(
