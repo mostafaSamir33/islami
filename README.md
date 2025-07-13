@@ -3,7 +3,7 @@
 A multi-language Flutter application featuring Quran, Hadith, Sepha, Prayer Times and Islamic reminders with a clean, user-friendly interface.
 
 <p align="center">
-  <img src="screenShots/islami_app_cover.png" alt="islami_app_cover" width="800" hspace="10" />
+  <img src="screenshots/islami_app_cover.png" alt="islami_app_cover" width="800" hspace="10" />
 </p>
 
 ---
