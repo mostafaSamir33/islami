@@ -1,16 +1,87 @@
-# islami
+# 🕌 Islami App (Flutter)
 
-A new Flutter project.
+A multi-language Flutter application featuring Quran, Hadith, Sepha, Prayer Times and Islamic reminders with a clean, user-friendly interface.
 
-## Getting Started
+<p align="center">
+  <img src="screenShots/islami_app_cover.png" alt="islami_app_cover" width="800" hspace="10" />
+</p>
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📹 App Demo:
+- watch this video:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+---
+
+## 🚀 Features
+
+- 👋 Onboarding flow for new users
+- 🏠 Bottom navigation with:
+    - Quran
+    - Hadith
+    - Sepha
+    - Radio
+    - Prayer Times and Islamic reminders
+- 💾 Save the last suras that the user read
+- 🔍 Search for any sura by its arabic or english name
+- 📻 Listen to the live islamic radio
+
+---
+
+## 📸 Screenshots
+
+### 👋 Onboarding
+
+<p align="center">
+  <img src="screenshots/onboarding1.jpg" alt="onboarding1" width="200" hspace="10" />
+  <img src="screenshots/onboarding2.jpg" alt="onboarding2" width="200" hspace="10" />
+  <img src="screenshots/onboarding3.jpg" alt="onboarding3" width="200" hspace="10" />
+  <img src="screenshots/onboarding4.jpg" alt="onboarding4" width="200" hspace="10" />
+  <img src="screenshots/onboarding5.jpg" alt="onboarding5" width="200" hspace="10" />
+</p>
+
+### 📖 Quran
+
+<p align="center">
+  <img src="screenshots/quran1.jpg" alt="quran1" width="200" hspace="10" />
+  <img src="screenshots/quran2.jpg" alt="quran2" width="200" hspace="10" />
+</p>
+
+### 🕰️ Most Recent
+
+<p align="center">
+  <img src="screenshots/most_recent.jpg" alt="most_recent" width="200" hspace="10" />
+</p>
+
+### 🔍 Search
+
+<p align="center">
+  <img src="screenshots/search.jpg" alt="search" width="200" hspace="10" />
+</p>
+
+### 📜 Hadith
+
+<p align="center">
+  <img src="screenshots/hadith.jpg" alt="hadith" width="200" hspace="10" />
+</p>
+
+### 🧮 Sebha
+
+<p align="center">
+  <img src="screenshots/sebha1.jpg" alt="sebha1" width="200" hspace="10" />
+  <img src="screenshots/sebha2.jpg" alt="sebha2" width="200" hspace="10" />
+</p>
+
+### 📻 Radio
+
+<p align="center">
+  <img src="screenshots/radio.jpg" alt="radio" width="200" hspace="10" />
+</p>
+
+### 🕒 Prayer Times
+
+<p align="center">
+  <img src="screenshots/prayer_times.jpg" alt="prayer_times" width="200" hspace="10" />
+</p>
