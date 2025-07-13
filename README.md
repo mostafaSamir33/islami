@@ -11,7 +11,7 @@ A multi-language Flutter application featuring Quran, Hadith, Sepha, Prayer Time
 ## 📹 App Demo:
 - watch this video:
 
-
+https://www.loom.com/share/20ad55398e3644c79fa69fcf4e2c8878?sid=cd88f775-c7f2-4448-9676-9ac726aa8a56
 
 ---
 
