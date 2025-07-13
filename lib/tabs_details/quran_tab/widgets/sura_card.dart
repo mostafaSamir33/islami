@@ -28,7 +28,7 @@ class SuraCard extends StatelessWidget {
         width: width * 0.65,
         decoration: BoxDecoration(
           color: AppColors.gold,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(20),
           ),
         ),
@@ -37,11 +37,11 @@ class SuraCard extends StatelessWidget {
           child: Stack(
             children: [
               Align(
+                alignment: const Alignment(1, 0),
                 child: Image(
                   image: AssetImage(AppImages.suraCardImage),
                   width: width * 0.34,
                 ),
-                alignment: Alignment(1, 0),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -14,9 +14,9 @@ class Page1 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          IntroScreenPagesHeader(),
+          const IntroScreenPagesHeader(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 80),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 80),
             child: Image.asset(AppImages.page_1_image),
           ),
           Padding(

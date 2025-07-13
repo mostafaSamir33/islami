@@ -11,7 +11,7 @@ class RecitersButtonTab extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 18,
           ),
           Expanded(
@@ -20,7 +20,7 @@ class RecitersButtonTab extends StatelessWidget {
                 return RadioCardModel.recitersButtonTabCardsObjects[index];
               },
               separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(
+                return const SizedBox(
                   height: 16,
                 );
               },

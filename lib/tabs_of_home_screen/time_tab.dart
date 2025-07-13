@@ -14,15 +14,15 @@ class TimeTab extends StatelessWidget {
     return BackgroundGradientAndTabDetails(
         backgroundImage: AppImages.timeTabBackground,
         gradiantIsVisible: true,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+        distanceBetweenIslamiLogoAndTabDetails: height * 0.162,
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [PrayTimesPart(), AzkarPart()],
             ),
           ),
-        ),
-        distanceBetweenIslamiLogoAndTabDetails: height * 0.162);
+        ));
   }
 }

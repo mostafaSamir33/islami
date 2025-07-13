@@ -15,12 +15,12 @@ class _PrayTimesPartState extends State<PrayTimesPart> {
   int currentIndex = 0;
 
   List<TimeTabPrayCard> timeTabPrayCard = [
-    TimeTabPrayCard(text1: 'Fajr', text2: '04:00', text3: 'AM'),
-    TimeTabPrayCard(text1: 'Sunrise', text2: '06:04', text3: 'AM'),
-    TimeTabPrayCard(text1: 'Dhuhr', text2: '01:01', text3: 'PM'),
-    TimeTabPrayCard(text1: 'ASR', text2: '04:38', text3: 'PM'),
-    TimeTabPrayCard(text1: 'Maghrib', text2: '07:57', text3: 'PM'),
-    TimeTabPrayCard(text1: 'Isha', text2: '09:57', text3: 'PM'),
+    const TimeTabPrayCard(text1: 'Fajr', text2: '04:00', text3: 'AM'),
+    const TimeTabPrayCard(text1: 'Sunrise', text2: '06:04', text3: 'AM'),
+    const TimeTabPrayCard(text1: 'Dhuhr', text2: '01:01', text3: 'PM'),
+    const TimeTabPrayCard(text1: 'ASR', text2: '04:38', text3: 'PM'),
+    const TimeTabPrayCard(text1: 'Maghrib', text2: '07:57', text3: 'PM'),
+    const TimeTabPrayCard(text1: 'Isha', text2: '09:57', text3: 'PM'),
   ];
 
   @override
@@ -114,7 +114,7 @@ class _PrayTimesPartState extends State<PrayTimesPart> {
                           fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
                     Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami/common/app_assets.dart';
 import 'package:islami/common/app_colors.dart';
 
 class TimeTabAzkarCard extends StatelessWidget {
@@ -14,7 +13,7 @@ class TimeTabAzkarCard extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Stack(
-      alignment: Alignment(0, 0),
+      alignment: const Alignment(0, 0),
       children: [
         Container(
           height: height * 0.28,

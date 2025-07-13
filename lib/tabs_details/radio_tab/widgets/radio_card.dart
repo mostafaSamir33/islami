@@ -37,7 +37,7 @@ class _RadioCardState extends State<RadioCard> {
             children: [
               Container(
                 height: height * 0.14,
-                alignment: Alignment(0, 1),
+                alignment: const Alignment(0, 1),
                 decoration: BoxDecoration(
                   color: AppColors.gold,
                   borderRadius: BorderRadius.circular(20),
@@ -61,7 +61,7 @@ class _RadioCardState extends State<RadioCard> {
                   borderRadius: BorderRadius.circular(20),
                   clipBehavior: Clip.hardEdge,
                   child: Transform.translate(
-                    offset: Offset(0, 52),
+                    offset: const Offset(0, 52),
                     child: Image.asset(
                       AppImages.radioSoundWave3,
                       color: AppColors.black.withOpacity(0.2),
@@ -75,7 +75,7 @@ class _RadioCardState extends State<RadioCard> {
           ),
         ),
         Align(
-          alignment: Alignment(0, 0),
+          alignment: const Alignment(0, 0),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Column(
@@ -87,7 +87,7 @@ class _RadioCardState extends State<RadioCard> {
                       fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 14,
                 ),
                 IconButton(

@@ -11,7 +11,7 @@ import '../tabs_of_home_screen/sebha_tab.dart';
 import '../tabs_of_home_screen/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-  static final String routeName = '/home screen';
+  static const String routeName = '/home screen';
 
   const HomeScreen({super.key});
 
@@ -21,11 +21,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
-    QuranTab(),
-    HadithTab(),
-    SebhaTab(),
-    RadioTab(),
-    TimeTab()
+    const QuranTab(),
+    const HadithTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const TimeTab()
   ];
   int selectedIndex = 0;
 
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               tabs[selectedIndex],
               Align(
-                  alignment: Alignment(0, -1),
+                  alignment: const Alignment(0, -1),
                   child: Image.asset(
                     AppImages.islamiLogo,
                     width: width * 0.697,
@@ -72,10 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: SvgPicture.asset(AppIcons.quranIcon),
                 label: 'Quran',
                 activeIcon: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   decoration: BoxDecoration(
                       color: AppColors.black.withOpacity(0.6),
-                      borderRadius: BorderRadius.all(Radius.circular(66))),
+                      borderRadius: const BorderRadius.all(Radius.circular(66))),
                   child: SvgPicture.asset(
                     AppIcons.quranIcon,
                     colorFilter:
@@ -86,10 +86,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: SvgPicture.asset(AppIcons.hadithIcon),
                 label: 'Hadith',
                 activeIcon: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   decoration: BoxDecoration(
                       color: AppColors.black.withOpacity(0.6),
-                      borderRadius: BorderRadius.all(Radius.circular(66))),
+                      borderRadius: const BorderRadius.all(Radius.circular(66))),
                   child: SvgPicture.asset(
                     AppIcons.hadithIcon,
                     colorFilter:
@@ -100,10 +100,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: SvgPicture.asset(AppIcons.sebhaIcon),
                 label: 'Sebha',
                 activeIcon: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   decoration: BoxDecoration(
                       color: AppColors.black.withOpacity(0.6),
-                      borderRadius: BorderRadius.all(Radius.circular(66))),
+                      borderRadius: const BorderRadius.all(Radius.circular(66))),
                   child: SvgPicture.asset(
                     AppIcons.sebhaIcon,
                     colorFilter:
@@ -114,10 +114,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: SvgPicture.asset(AppIcons.radioIcon),
                 label: 'Radio',
                 activeIcon: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   decoration: BoxDecoration(
                       color: AppColors.black.withOpacity(0.6),
-                      borderRadius: BorderRadius.all(Radius.circular(66))),
+                      borderRadius: const BorderRadius.all(Radius.circular(66))),
                   child: SvgPicture.asset(
                     AppIcons.radioIcon,
                     colorFilter:
@@ -128,10 +128,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: SvgPicture.asset(AppIcons.timeIcon),
                 label: 'Time',
                 activeIcon: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   decoration: BoxDecoration(
                       color: AppColors.black.withOpacity(0.6),
-                      borderRadius: BorderRadius.all(Radius.circular(66))),
+                      borderRadius: const BorderRadius.all(Radius.circular(66))),
                   child: SvgPicture.asset(
                     AppIcons.timeIcon,
                     colorFilter:
